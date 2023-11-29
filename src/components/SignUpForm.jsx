@@ -25,14 +25,13 @@ export default function SignUpForm({ setToken }) {
             setError(error.message);
         }
 
-        setUsername("");
-        setPassword("");
+        
     }
     return (
         <div>
             <h2>Sign Up</h2>
             {error && <p>{error}</p>}
-            <form>
+            <form onClick={handleSubmit}>
                 <label htmlFor="username">
                     Username: {""}
                     <input value={username} onChange={(e) => setUsername(e.target.value)} type="text" />
@@ -41,7 +40,7 @@ export default function SignUpForm({ setToken }) {
                     Password: {""}
                     <input type="password" value={password} onChange={(e) => setPassword(e.target.value)} />
                 </label>
-                <button onClick={handleSubmit}>Submit</button>
+                <button >Submit</button>
             </form>
         </div>
     )
